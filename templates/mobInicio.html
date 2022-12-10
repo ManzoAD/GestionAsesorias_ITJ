@@ -1,0 +1,174 @@
+{% extends './head_foot.html' %}
+{% block estilos %}
+<link rel="stylesheet" href="{{url_for('static',filename='styles/style_inicio.css')}}">
+{% endblock %}
+{% block titulo %}
+<title>Principal</title>
+{% endblock %}
+{% block main %}
+<main class="myMain">
+        <section class="form_busqueda"id="cont_letrero">
+            <div class="content_barraBusqueda">
+            <div class="fondo">
+                <figure>
+                <img src="{{url_for('static',filename='images/logoITJ.webp')}}" alt="Imagen logo ITJ">
+                <p>Asesorias ITJ</p>
+                <p>Aclara tus dudas, Asesorate hoy</p>
+                </figure>
+            </div>
+             </div>
+            <form action="" class="">
+                <input type="search" placeholder="Nombre Asesoria">
+                <button><img src="{{url_for('static',filename='images/buscar.png')}}" alt="botonBusqueda"></button> 
+            </form>
+        
+        </section>
+        
+        <section class="zona_tarjetas tarj_Inscrip">
+            <div class="one_card inactive" id="inscribirme" >
+
+                <div class="titulo_asesoria"> 
+                <img src="{{url_for('static',filename='images/webMateria.png')}}" alt="icono asesoria">
+                <p>Programacion Web</p>
+                </div>
+
+                <div class="datos_asesoria">
+                    <p>Profresor: <span>Leonardo Martinez</span></p>
+                    <p>Disponibles <span>completo</span></p>
+                </div>
+
+                <div class="hora_asesoria">
+                    <p>Lu: 10:00-11:00</p>
+                    <p>Mi: 10:00-11:00</p>
+                    <p>Ju: 10:00-11:00</p>
+                </div>
+             <div class="valor_prog" >
+                <figure>
+                    <img src="{{url_for('static',filename='images/YellowStar.png')}}" alt="icono valoracion">
+                    <img src="{{url_for('static',filename='images/YellowStar.png')}}" alt="icono valoracion">
+                    <img src="{{url_for('static',filename='images/YellowStar.png')}}" alt="icono valoracion">
+                    <img src="{{url_for('static',filename='images/WhiteStar.png')}}" alt="icono valoracion">
+                </figure>
+                <div>
+                    <input type="button" value="Inscribirme" class="boton bts btnInscrib">
+                    <input type="button" value="Estadistica" class="boton btnEstadist">
+                </div>
+             </div>
+                
+            </div>
+            <div class="conten_msj msj_confirm_inscript inactive">
+                <div class="cuerpo_msj">
+                    <img src="{{url_for('static',filename='images/inscripcion.png')}}" alt="icono inscripcion">
+                    <p>¿Deseas Inscribirte? Asesoria Simulacion</p>
+                </div>
+                <div class="cont_btn">
+                <input type="button" value="Aceptar" class="boton btnACF">
+                <input type="button" value="Cancelar" class="boton btnCCF">
+                </div>
+                
+                
+            </div>
+            <div class="conten_msj msj_inscript msjInsF inactive">
+                <div class="cuerpo_msj">
+                    <img src="{{url_for('static',filename='images/inscripcion.png')}}" alt="icono inscripcion">
+                    <p>Inscripcion Exitosa!!</p>
+                </div>
+                <input type="button" value="Aceptar" class="boton btnACCFF">
+                
+            </div>
+
+            {% for sec in seccionar %}
+            <p class="separador">{{sec}}</p>
+            
+            <div class="multi_cards">
+                {% for infoAs in datos %}
+                {% if sec==infoAs['Area'] %}
+                <div class="one_card">
+
+                    <div class="titulo_asesoria">
+                    <img src="{{url_for('static',filename='images/webMateria.png')}}" alt="icono asesoria">
+                    <p>{{infoAs['nombre_asesoria']}}</p>
+                    </div>
+
+                    <div class="datos_asesoria">
+                        <p>Profresor: <span>{{infoAs['docente']['nombre']}}</span></p>
+                        {% if infoAs['Espacios_disponibles'] == 0 %}
+                        <p>Disponibles <span>completo</span></p>
+                        {% endif %}
+                        {% if infoAs['Espacios_disponibles'] > 0 %}
+                        <p>Disponibles <span>{{infoAs['Espacios_disponibles']}}</span></p>
+                        {% endif %}
+                    </div>
+
+                    <div class="hora_asesoria">
+                        {% for i in infoAs['horario']%}
+                        <p>{{i['Dia'][:2]}}:{{i['HoraInicio']}}-{{i['HoraFin']}}</p>
+                        {% endfor %}
+                    </div>
+                 <div class="valor_prog">
+                    <figure>
+                        <img src="{{url_for('static',filename='images/YellowStar.png')}}" alt="icono valoracion">
+                        <img src="{{url_for('static',filename='images/YellowStar.png')}}" alt="icono valoracion">
+                        <img src="{{url_for('static',filename='images/YellowStar.png')}}" alt="icono valoracion">
+                        <img src="{{url_for('static',filename='images/WhiteStar.png')}}" alt="icono valoracion">
+                    </figure>
+                    <p class="vr_program"><a href="#">ver programa</a></p>
+                 </div>
+
+                </div>
+                {% endif %}
+                {% endfor %}
+
+            </div>
+            {% endfor %}
+
+        </section>
+
+    <div class="contG_Sugerencias">
+    <section class="Sugerir">
+    <div class="encabezado">
+    <p>Sugerencias</p>
+    </div>
+    <div class="content_article">
+
+        {% for com in comentar %}
+        <article>
+        <p>{{com['c_usuario'][0]['nombre']}}</p>
+        <div class="cuerpo">
+        <div class="msj">
+        <img src="{{url_for('static',filename='images/avatar.png')}}" alt="icono usuario">
+        <p>{{com['descripcion']}}</p>
+        </div>
+        <div class="">
+        <label for="{{com['id_comentario']}}" class="cont_Like">
+        <img src="{{url_for('static',filename='images/like_outline.png')}}" alt="iconoLike">
+        <input type="checkbox" class="chLike" id="{{com['id_comentario']}}"  >
+        </label>
+
+        <p>32</p>
+        </div>
+        </div>
+        </article>
+        {% endfor %}
+    </div>
+        <div class="msj_emergente inactive">
+            <img src="{{url_for('static',filename='images/email.png')}}" alt="">
+            <p>Sugerencia Guardada</p>
+            <button id="aceptaSugerencia">Aceptar</button>
+         </div>
+    </section>
+        <form action="http://127.0.0.1:5000/asesorias/comentario" id="comentario" method="post">
+            
+            <input type="text" placeholder="Ingresa tu Sugerencia" name="comUs">
+            
+            <button class="btn_sendS"><img src="{{url_for('static',filename='images/send-message.png')}}" alt="Boton que envia una sugerencia"></button>
+           </form>
+    </div> 
+        
+</main>
+{% endblock %}
+{% block scripts %} 
+<script src="{{url_for('static',filename='javaScript/js_inicio.js')}}"></script>
+<script src="{{url_for('static',filename='javaScript/wind_Inicio.js')}}"></script>
+{% endblock %}
+

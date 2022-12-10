@@ -1,0 +1,72 @@
+{% extends './head_foot.html' %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{{url_for('static',filename='styles/head_foot.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='styles/style_login.css')}}">
+{% endblock %}
+
+{% block titulo %}
+<title>Login</title>
+{% endblock %}
+
+
+{% block main %}
+    <main class="myMain">
+        <div class="content_all">
+        <div class="content_loginImg">
+        </div>
+        <div class="content_login">
+            <p class="iniSes">Inicia Sesion</p>
+            <figure>
+                <img src="{{url_for('static',filename='images/logoITJ.webp')}}" alt="Imagen tecnologico">
+            </figure>
+            <form action="http://127.0.0.1:5000/login" id="logInAs" method="post">
+              
+                <div class="radio_btns">
+                    <fieldset id="RadioSesion" name="RadField" >
+                    <label for="rd_Alumno">
+                        Alumno
+                        <input type="radio" name="RadioSesion" id="rd_Alumno" value="Estudiante" hidden>
+                    </label>
+                    <label for="rd_Docente">
+                        Docente
+                        <input type="radio" name="RadioSesion" id="rd_Docente" value="Docente" hidden required>
+                    </label>
+                    <label for="rd_Admin">
+                        Admin
+                        <input type="radio" name="RadioSesion" id="rd_Admin" value="Admin" hidden required>
+                    </label>
+                </fieldset>
+                </div>
+               <div class="content_labels">
+                <div class="SisG">
+                    <p>Sistema Gestor de Asesorias</p>
+                         <img src="{{url_for('static',filename='images/loginIcon.png')}}" alt="icono login">
+                        </div>
+                <label for="usform">
+                    Usuario:
+                    <input type="text" placeholder="Usuario" id="usform" name="mail_login" >
+                </label>
+                <label for="clavf">
+                    Contraseña:
+                    <input type="password" name="clave_form" id="clavf" placeholder="Contraseña">
+                </label>
+            </div>
+                <div class="btn_form">
+                    <input type="submit" value="Inicio Sesion">
+                    <a href="#">Registrar</a>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    </main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{url_for('static',filename='javaScript/js_inicio.js')}}"></script>
+{% endblock %}
+
+
+
+

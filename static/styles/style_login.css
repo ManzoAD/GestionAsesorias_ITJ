@@ -1,0 +1,261 @@
+:root{
+    --fondo:#E8F5FF;
+    --barraAside: #1034ac;
+    --fondoTec:#DAA0FF;
+    --blueComments: #0094FF;
+    --morado1:#9F1FF0;
+    --morado2:#8539B6;
+    --cardborder:#652384;
+    --grisSugerir:#5F5E5E;
+    --sombra: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    --btnAceptar:#1AA438;
+    --btnCancelar:#DD1313;
+    --avisos:#FBF0F0;
+    --cobaltBlue:#0047ab;
+    --MayaBlue: #73c2fb;
+    --BBlue: #89cff0d6;
+    --azulDetalles: #3A8CE3;
+
+}
+.content_all{
+    width: 100%;
+    height: 100%;
+}
+.content_login{
+    width: 100%;
+    height: 100%;
+    display:  flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+.content_login .iniSes{
+    font-size: 1.8rem;
+    background-color: rgb(58, 140, 227);
+    width: 52%;
+    border-radius: 5px;
+    font-weight: bold;
+    font-style: italic;
+    box-shadow: var(--sombra);
+    color:  white;
+    align-self:flex-end;
+    display: inline-block;
+    margin-right: 38px;
+    text-align: center;
+    border: 0px solid white;
+    
+   
+
+}
+.content_login .SisG{
+    color: var(--barraAside);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.content_login .SisG p{
+    box-shadow: var(--sombra);
+    font-size: 1.6rem;
+    font-weight: bolder;
+    font-style: italic;
+    text-align: center;
+    border: 1px solid var(--azulDetalles);
+}
+.content_login form{
+    width: 90%;
+    height: 80%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+    background-color: white;
+    box-shadow: var(--sombra);
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid var(--barraAside);
+    position: relative;
+}
+.content_login form img{
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+    margin: 0 auto;
+    
+    opacity: .8;
+    
+}
+.content_login form .content_labels label {
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    color: var(--barraAside);
+    font-weight: bolder;
+    gap: 20px;
+    font-style: italic;
+}
+.content_login form .content_labels{
+   height: 60%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.content_login form input[type="text"],input[type="password"]{
+    background-color: aliceblue;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    width: 290px;
+    box-shadow: var(--sombra);
+}
+
+.content_login figure img{
+    width: 120px;
+    height: 120px;
+    border: 3px solid var(--blueComments);
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+    opacity: 0.8;
+}
+.content_login figure{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 35px;
+    right: 255px;
+    z-index: 1;
+}
+
+/* .content_labels{
+    display: flex;
+    flex-direction: column;
+} */
+fieldset{
+    border: none;
+    position: absolute;
+    top:-12px;
+    font-size: 1.9rem;
+    font-style: italic;
+    width: 210px;
+    height: 30px;
+   right: 10px;
+   border-radius: 5px;
+   background-color: white;
+   border: 1px solid var(--barraAside);
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+}
+fieldset label{
+    width: 33.333%;
+    border-radius: 3px;
+    text-align: center;
+}
+fieldset input[type="radio"]:checked{
+    background-color: var(--barraAside);
+}
+
+fieldset label:hover{
+    background-color: var(--azulDetalles);
+    color: white;
+}
+
+
+
+
+.btn_form{
+    display:  flex;
+    gap: 50px;
+}
+.btn_form input{
+    background-color: var(--azulDetalles);
+    border: none;
+    height: 28px;
+    width: 100px;
+    border-radius: 5px;
+    box-shadow: var(--sombra);
+    color: white;
+    font-weight: bold;
+}
+.btn_form input:hover{
+    background-color: var(--blueComments);
+}
+.btn_form a:hover{
+    background-color: var(--blueComments);
+}
+.btn_form a{
+    background-color: var(--azulDetalles);
+    height: 28px;
+    width: 100px;
+    text-align: center;
+    padding: 7px;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    text-decoration: none;
+    box-shadow: var(--sombra);
+    color: white;
+    font-weight: bold;
+    
+}
+
+
+@media(min-width:768px){
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.content_all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    border: 1px solid var(--barraAside);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+.content_login{
+    width: 50%;
+    height: 100%;
+    background-color: var(--cobaltBlue);
+}
+.content_loginImg{
+    background-image: url("../images/letrasitj.png");
+   background-position:81% 30%;
+    background-size: cover;
+
+    width: 100%;
+    height: 100%;
+}
+.content_login figure{
+    right: 280px;
+    background-color: white;
+    border-radius: 20px;
+    top: 30px;
+}
+.content_login .SisG p{
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    color: var(--cobaltBlue);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.content_login form img{
+    width: 100px;
+    height: 100px;
+    box-shadow: none;
+}
+
+form{
+    padding-top: 30px;
+}
+.content_login form .content_labels{
+    height: 80%;
+    justify-content: space-around;
+}
+}

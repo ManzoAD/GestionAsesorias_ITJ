@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block estilos %} {% endblock %}
+    {% block titulo %}  {% endblock %}
+</head>
+<body>
+<header>
+    <figure class="logoTecNM">
+        <img src="{{url_for('static',filename='images/logoTecNM.png')}}" alt="Logo TecNM">
+        <figcaption>Tecnologico Jiquilpan</figcaption>
+    </figure>
+    <figure class="logoHalcon">
+        <img src="{{url_for('static',filename='images/logoHalcon.png')}}" alt="Logo Halcones Community">
+        <figcaption class="logoHalcon">Halcones Community</figcaption>
+    </figure>
+    <div class="head_botones">
+        <a href="#" id="menunotif"><img src="{{url_for('static',filename='images/notifi.png')}}" alt="icono notificacion"></a>
+        <a href="#" id="menuh"><img src="{{url_for('static',filename='images/menuham.png')}}" alt="icono menu"></a>
+        <div class="notificaciones inactive">
+            <p>Mis Notificaciones</p>
+            <div>
+                <img src="{{url_for('static',filename='images/clock.png')}}" alt="icono tiempo">
+                <p>Tu asesoria esta por comenzar</p>
+                <p>12:00 -- 01:00pm</p>
+            </div>
+            <div>
+                <img src="{{url_for('static',filename='images/group.png')}}" alt="icono personas">
+                <p>Se han unido nuevos alumnos</p>
+            </div>
+            <div>
+                <img src="{{url_for('static',filename='images/calendar.png')}}"alt="icono calendario">
+                <p>Proxima Asesoria</p>
+                <p>Martes 12:00 -- 01:00pm</p>
+            </div>
+            <input type="button" value="Borrar">
+        </div>
+        <div class="menu_mobile inactive">
+        <p>Menu Navegacion</p>
+        <nav >
+            <ul>
+                <li><a href="mobInicio.html"><img src="{{url_for('static',filename='images/inicio.png')}}" alt="icono inicio">Inicio</a></li>
+                <li><a href="asesorias.html"><img src="{{url_for('static',filename='images/asesor.png')}}" alt="icono Asesorias"> Asesorias</a></li>
+                <li><a href="EvaluacionFinal.html"><img src="{{url_for('static',filename='images/evalua.png')}}" alt="icono Evaluacion"> Evaluacion</a></li>
+                <li><a href="../trab_morgado/Asesorias.html"><img src="{{url_for('static',filename='images/estats.png')}}" alt="icono Estadistica"> Estadistica</a></li>
+                <li><a href="#" class="figAside"><img src="{{url_for('static',filename='images/configu.png')}}" alt="icono configu"> Configurar</a>
+                <div class="content_toggle inactive">
+                    <p>Activa / Desactiva  los avisos</p>
+                    <p>Docentes</p>
+
+                        <label for="tgv" class="toggle_button ctogAvi" id="togAvi" >
+                            <input type="checkbox" class="indicador ctgv" id="tgv">
+                        </label>
+
+                    <p>Horario asesoria</p>
+                    <label for="tga" class="toggle_button ctogAseso" id="togAseso" >
+                        <input type="checkbox" class="indicador ctga" id="tga">
+                    </label>
+                </div>
+                </li>
+                <li><a href="../index.html"><img src="{{url_for('static',filename='images/Salir.png')}}"alt="icono salir"> Salir</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    </div>
+    
+</header>
+    
+<aside class="" id="asideMenu">
+    <div class="content_aside"> 
+    <h2 >Tecnologico de Jiquilpan</h3>
+        
+    <figure class="imgLogo">
+        
+        <img src="{{url_for('static',filename='images/logoHalcon.png')}}" alt="Logo Halcones Community">
+        <figcaption>Halcones Community</figcaption>
+        <canvas id="canLogo" width="200px" height="5px"></canvas>
+    </figure>
+
+    <nav>
+        <ul>                
+            <li><a href="mobInicio.html"><img src="{{url_for('static',filename='images/inicio.png')}}" alt="icono inicio">Inicio</a></li>
+            <li><a href="asesorias.html"><img src="{{url_for('static',filename='images/asesor.png')}}" alt="icono Asesorias"> Asesorias</a></li>
+            <li><a href="EvaluacionFinal.html"><img src="{{url_for('static',filename='images/evalua.png')}}" alt="icono Evaluacion"> Evaluacion</a></li>
+            <li><a href="../trab_morgado/Asesorias.html"><img src="{{url_for('static',filename='images/estats.png')}}" alt="icono Estadistica"> Estadistica</a></li>
+            <li ><a href="#" class="lknotifi"><img src="{{url_for('static',filename='images/notifi.png')}}" alt="icono notificacion">Avisos</a>
+            <ul class="inactive avisado" id="avi">
+            <li>Mis Avisos</li>
+            <li>
+                <div>
+
+                    <img src="{{url_for('static',filename='images/clock.png')}}" alt="icono tiempo">
+                    <p>Tu asesoria esta por comenzar</p>
+                    <p>12:00 -- 01:00pm</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="{{url_for('static',filename='images/group.png')}}" alt="icono personas">
+                    <p>Se han unido nuevos alumnos</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="{{url_for('static',filename='images/calendar.png')}}"alt="icono calendario">
+                    <p>Proxima Asesoria</p>
+                    <p>Martes 12:00 -- 01:00pm</p>
+                </div>
+            </li>
+            <li>
+                <input type="button" value="Borrar" id="borra">
+            </li>
+            </ul>
+        </li>
+            <li><a href="#" class="figAside"><img src="{{url_for('static',filename='images/configu.png')}}" alt="icono configu"> Configurar</a>
+            <div class="content_toggle inactive">
+                <p>Activa / Desactiva  los avisos</p>
+                    <p>Docentes</p>
+                    
+                        <label for="tgv" class="toggle_button ctogAvi" id="togAvi" >
+                            <input type="checkbox" class="indicador ctgv" id="tgv">
+                        </label>
+                    
+                    <p>Horario asesoria</p>
+                    <label for="tga" class="toggle_button ctogAseso" id="togAseso" >
+                        <input type="checkbox" class="indicador ctga" id="tga">
+                    </label>
+            </div>
+            </li>
+            <li><a href="../index.html"><img src="{{url_for('static',filename='images/Salir.png')}}" alt="icono salir"> Salir</a></li>
+        </ul>
+    </nav>
+    <div class="Our_Networks">
+        <p>Nuestras Redes</p>
+        <canvas width="150px" height="5px" id="can_Network"></canvas>
+        <figure class="figimg">
+            <a href="#"><img src="{{url_for('static',filename='images/facebook.png')}}" alt="icono facebook"></a>
+            <a href="#"><img src="{{url_for('static',filename='images/mindBx.png')}}" alt="icono Mindbox"></a>
+            <a href="#"><img src="{{url_for('static',filename='images/moodle.png')}}" alt="icono moodle"></a>
+            <a href="#"><img src="{{url_for('static',filename='images/Whats.png')}}" alt="icono whatsApp"></a>
+        </figure>
+    </div>
+</div>
+</aside>
+{% block main %} 
+{% endblock %}
+<footer>
+    <div class="redes">
+     <p>Nuestras Redes</p>
+     <figure>
+     <img src="{{url_for('static',filename='images/moodle.png')}}" alt="icono moodle">
+     <img src="{{url_for('static',filename='images/facebook.png')}}" alt="icono facebook">
+     <img src="{{url_for('static',filename='images/mindBx.png')}}"alt="icono mindbox">
+     <img src="{{url_for('static',filename='images/Inter.png')}}"alt="icono webITJ">
+     </figure>
+
+ </div>
+ <div class="contacto">
+     <p>Contactanos</p>
+     <div>
+    <p>SGAA2022@JIQUILPAN.TECNM.MX</p>
+     <img src="{{url_for('static',filename='images/msg.png')}}" alt="icon msg">
+     </div>
+     
+ </div>
+ </footer>
+</body>
+{% block scripts %} 
+{% endblock %}
+</html>
