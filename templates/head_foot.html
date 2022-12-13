@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block estilos %} {% endblock %}
+    
     {% block titulo %}  {% endblock %}
 </head>
 <body>
@@ -42,8 +43,8 @@
         <p>Menu Navegacion</p>
         <nav >
             <ul>
-                <li><a href="mobInicio.html"><img src="{{url_for('static',filename='images/inicio.png')}}" alt="icono inicio">Inicio</a></li>
-                <li><a href="asesorias.html"><img src="{{url_for('static',filename='images/asesor.png')}}" alt="icono Asesorias"> Asesorias</a></li>
+                <li><a href="/asesorias"><img src="{{url_for('static',filename='images/inicio.png')}}" alt="icono inicio">Inicio</a></li>
+                <li><a href="/misasesorias"><img src="{{url_for('static',filename='images/asesor.png')}}" alt="icono Asesorias"> Asesorias</a></li>
                 <li><a href="EvaluacionFinal.html"><img src="{{url_for('static',filename='images/evalua.png')}}" alt="icono Evaluacion"> Evaluacion</a></li>
                 <li><a href="../trab_morgado/Asesorias.html"><img src="{{url_for('static',filename='images/estats.png')}}" alt="icono Estadistica"> Estadistica</a></li>
                 <li><a href="#" class="figAside"><img src="{{url_for('static',filename='images/configu.png')}}" alt="icono configu"> Configurar</a>
@@ -61,7 +62,7 @@
                     </label>
                 </div>
                 </li>
-                <li><a href="../index.html"><img src="{{url_for('static',filename='images/Salir.png')}}"alt="icono salir"> Salir</a></li>
+                <li><a href="/salir"><img src="{{url_for('static',filename='images/Salir.png')}}"alt="icono salir"> Salir</a></li>
             </ul>
         </nav>
     </div>
@@ -146,7 +147,10 @@
     </div>
 </div>
 </aside>
+
 {% block main %} 
+{% block mensaje %}
+{% endblock %}
 {% endblock %}
 <footer>
     <div class="redes">
@@ -168,7 +172,8 @@
      
  </div>
  </footer>
-</body>
-{% block scripts %} 
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+ {% block scripts %} 
 {% endblock %}
+</body>
 </html>

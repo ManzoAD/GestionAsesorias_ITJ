@@ -58,7 +58,7 @@ function SendSuge(){
 //Manipulacion del menu Inscripcion 
 /* const verProg= document.querySelector('.vr_program'); */
 
-const verProg =document.getElementsByClassName('vr_program');
+//const verProg =document.getElementsByClassName('vr_program');
 const confirmAsesoria = document.querySelector('.msj_confirm_inscript');
 const Inscripcion = document.querySelector("#inscribirme");
 const btnInscri=document.querySelector('.btnInscrib');
@@ -70,11 +70,11 @@ const btnAceptmsj = document.querySelector('.btnACCFF');
 
 
 
-for(let i=0; i<verProg.length; i++){
+/* for(let i=0; i<verProg.length; i++){
     verProg[i].addEventListener("click",function(){
         Inscripcion.classList.toggle('inactive');
     })
-}
+} */
 /* verProg.addEventListener("click",Open_menuInscribir);
  */
 

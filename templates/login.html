@@ -12,8 +12,23 @@
 
 {% block main %}
     <main class="myMain">
+        
+            
+        
         <div class="content_all">
         <div class="content_loginImg">
+            {% block mensaje %}
+                        {% for message in get_flashed_messages() %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <p>{{message}}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button>
+                            </p>
+                           
+                          </div>
+                        {% endfor %}
+                    {# % block page_content %}{% endblock % #}
+                   
+            {% endblock %}
         </div>
         <div class="content_login">
             <p class="iniSes">Inicia Sesion</p>
@@ -45,7 +60,7 @@
                         </div>
                 <label for="usform">
                     Usuario:
-                    <input type="text" placeholder="Usuario" id="usform" name="mail_login" >
+                    <input type="text" placeholder="Correo usuario" id="usform" name="mail_login" >
                 </label>
                 <label for="clavf">
                     Contraseña:

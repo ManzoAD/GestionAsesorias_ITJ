@@ -1,0 +1,71 @@
+{% extends './head_foot.html' %}
+{% block estilos %}
+<link rel="stylesheet" href="{{url_for('static',filename='styles/style_registro.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='styles/head_foot.css')}}">
+{% endblock %}
+
+{% block titulo %}
+<title>Registro Asesoria</title>
+{% endblock %}
+
+{% block main %}
+    <main class="myMain">
+        
+        <div class="zona_tarjetas">
+            <p class="separador">Registro Asesoria</p>
+            <div class="one_card">
+
+                <div class="titulo_asesoria">
+                <img src="{{url_for('static',filename='images/webMateria.png')}}" alt="icono asesoria">
+                <p>{{datos['nombre_asesoria']}}</p>
+                </div>
+
+                <div class="datos_asesoria">
+                    <p>Profresor: <span>{{datos['docente']['nombre']}}</span></p>
+                    {% if datos['Espacios_disponibles']==0 %}
+                    <p>Disponibles <span>completo</span></p>
+                    {% endif %}
+                    {% if datos['Espacios_disponibles']>0 %}
+                    <p>Disponibles <span>{{datos['Espacios_disponibles']}}</span></p>
+                    {% endif%}
+                </div>
+                <div class="temario_asesoria">
+                    <p>Temas Tratados</p>
+                    <ul>
+                        {% for i in datos['Temario'] %}
+                        <li>*{{i}}</li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+                <div class="hora_asesoria">
+                    {% for i in datos['horario'] %}
+                    <p>{{i['Dia'][:2]}}:{{i['HoraInicio']}}-{{i['HoraFin']}}</p>
+                    {% endfor %}
+                </div>
+               
+             <div class="valor_prog">
+                <figure>
+                    <img src="{{url_for('static',filename='images/YellowStar.png')}}" alt="icono valoracion">
+                    <img src="{{url_for('static',filename='images/YellowStar.png')}}" alt="icono valoracion">
+                    <img src="{{url_for('static',filename='images/YellowStar.png')}}" alt="icono valoracion">
+                    <img src="{{url_for('static',filename='images/WhiteStar.png')}}" alt="icono valoracion">
+                </figure>
+            <div class="cont_opcis">
+                {% if datos['Espacios_disponibles']>0 %}
+                <p class="opcis inscrib"><a href="#">Inscribirme</a></p>
+                {% endif %}
+                <p class="opcis cancel"><a href="/asesorias">Cancelar</a></p>
+            </div>
+             </div>
+                
+            </div>
+            
+        </div>
+       
+    </main>
+    {% endblock %}
+
+{% block scripts %}
+<script src="../javaScript/js_inicio.js"></script>
+{% endblock %}

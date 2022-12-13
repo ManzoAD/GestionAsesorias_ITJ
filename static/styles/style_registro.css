@@ -1,0 +1,192 @@
+:root{
+    --fondo:#E8F5FF;
+   /*  --barraAside:#7F19AE; */
+   /* --barraAside: #6915C4; */
+   --barraAside: #1034ac;
+   --menuMob:#5546dd;
+    --fondoTec:#DAA0FF;
+    --blueComments: #0094FF;
+    --morado1:#9F1FF0;
+    --morado2:#8539B6;
+    --cardborder:#652384;
+    --grisSugerir:#5F5E5E;
+    --sombra: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    --btnAceptar:#1AA438;
+    --btnCancelar:#DD1313;
+    --avisos:#fbf5f5;
+    --cobaltBlue:#0047ab;
+    --MayaBlue: #73c2fb;
+    --BBlue: #89cff0d6;
+}
+
+
+.myMain{
+    display: flex;
+    justify-content: center;
+}
+.zona_tarjetas {
+    width: 80%;
+    height: 80%;
+}
+.zona_tarjetas .one_card{
+
+    width: 40%;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    border: 4px solid whitesmoke;
+   box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    scroll-snap-align: center;
+    
+    
+    
+    }
+    .zona_tarjetas .one_card img{
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    border: 1px solid var(--morado2);
+    
+    }
+    .zona_tarjetas .one_card figure img{
+        border:  none;
+        width: 35px;
+        height: 35px;
+    }
+    .zona_tarjetas .one_card .titulo_asesoria{
+        display: flex;
+        align-items: center;
+        margin-left: 3px;
+    }
+    .zona_tarjetas .one_card .titulo_asesoria p{
+        font-size: 2.1rem;
+        font-weight: 600;
+        border-top: 1px solid var(--morado2);
+        border-bottom: 1px solid var(--morado2);
+        border-right: 1px solid var(--morado2);
+        border-radius: 4px;
+        width: 80%;
+        text-align: center;
+        height: 30px;
+        font-style: italic;
+        color: var(--cardborder);
+
+    }
+    .zona_tarjetas .one_card .datos_asesoria{
+        font-size: 2.2rem;
+    }
+    .zona_tarjetas .one_card .datos_asesoria{
+        margin: 0 auto;
+    }
+    .zona_tarjetas .one_card .datos_asesoria p{
+        margin-bottom: 2px;
+    }
+    .zona_tarjetas .one_card .datos_asesoria span{
+        color: var(--blueComments);
+        font-weight: 500;
+        
+    }
+
+    .zona_tarjetas .one_card .temario_asesoria{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       border-top: 1px solid black;
+       gap: 10px;
+    }
+    .zona_tarjetas .one_card .temario_asesoria p{
+        font-size: 2.4rem;
+        color: var(--blueComments);
+    }
+    .zona_tarjetas .one_card .temario_asesoria ul{
+        display: flex;
+       flex-direction: row;
+       justify-content: center;
+       gap: 20px;
+        flex-wrap: wrap;
+        font-size: 1.9rem;
+        list-style: none;
+        
+    }
+
+    .zona_tarjetas .one_card .hora_asesoria{
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 1.8rem;
+        font-weight: 500;
+        justify-content: space-evenly;
+        gap: 5px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        text-align: center;
+    }
+    .zona_tarjetas .one_card .hora_asesoria p{
+        width: 130px;
+        background-color: lightgray;
+        border-radius: 4px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+    .zona_tarjetas .one_card .valor_prog{
+    
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+
+    .zona_tarjetas .cont_opcis{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+    .zona_tarjetas .cont_opcis p{
+        width: 110px;
+        height: 24px;
+        text-align: center;
+        border: 1px solid white;
+        box-shadow: var(--sombra);
+        border-radius: 5px;
+    }
+    .zona_tarjetas .cont_opcis p:nth-child(1){
+        background-color: var(--btnAceptar);
+    }
+    .zona_tarjetas .cont_opcis p:nth-child(2){
+        background-color: var(--btnCancelar);
+    }
+    
+
+    .zona_tarjetas .one_card .opcis a{
+        font-size: 1.8rem;
+        font-weight:lighter;
+        color: white;
+        text-decoration: none;
+        font-style: italic;
+        
+        border-radius: 5px;
+        
+    }
+
+
+    .zona_tarjetas .separador{
+        /* background-image: url('../images/techback.webp');
+        background-size: cover;
+        background-repeat: no-repeat; */
+        display: inline-block;
+        width: 90%;
+        height: 40px;
+        text-align: center;
+        color: var(--cardborder);
+    
+        font-size: 2.8rem;
+        font-weight: bold;
+        box-shadow: var(--sombra);
+        border: 2px solid white;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        justify-self: center;
+        border-radius: 6px;
+        font-style: italic;
+    }

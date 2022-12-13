@@ -1,0 +1,330 @@
+
+{% extends './head_foot.html' %}
+{% block estilos %}
+<link rel="stylesheet" href="{{url_for('static',filename='styles/style_asesoria.css')}}">
+{% endblock %}
+
+{% block titulo %}
+<title>Mis Asesorias</title>
+{% endblock %}
+
+
+
+{% block main %}
+    <main class="myMain">
+        <div class="conten_GUsuarios">
+        <div class="usuario">
+            <img src="../images/hombre.png" alt="imagen usuario">
+            <div><p><span>Mi perfil</span> (Docente)</p>
+                <p>Leonardo Martinez </p></div>
+        </div>
+        <div class="botones">
+            <a href="asesorias.html">Vista Alumno</a>
+            <a href="admin.html">Vista Admin</a>
+        </div>
+    </div>
+        <div class="content_toggle">
+            <p>Asesorias  /  Horarios</p>
+            <div class="toggle_button" id="toggle">
+                <li class="indicador"></li>
+            </div>
+        </div>
+        <div class="tabla_horarios inactivo">
+            <table>
+                <thead>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miercoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p>07:00-09:00</p>
+                            <p>Desarrollo Web</p>
+                            <p>Aula: UM01</p>
+                            <p>Profesor: Leonardo Martinez Gonzales</p>
+                        </td>
+                        <td>
+                            <p>07:00-09:00</p>
+                            <p>Desarrollo Web</p>
+                            <p>Aula: UM01</p>
+                            <p>Profesor: Leonardo Martinez Gonzales</p>
+                        </td>
+                        <td>
+                            <p>07:00-09:00</p>
+                            <p>Desarrollo Web</p>
+                            <p>Aula: UM01</p>
+                            <p>Profesor: Leonardo Martinez Gonzales</p>
+                        </td>
+                        <td>
+                            <p>07:00-09:00</p>
+                            <p>Desarrollo Web</p>
+                            <p>Aula: UM01</p>
+                            <p>Profesor: Leonardo Martinez Gonzales</p>
+                        </td>
+                        <td>
+                            <p>07:00-09:00</p>
+                            <p>Desarrollo Web</p>
+                            <p>Aula: UM01</p>
+                            <p>Profesor: Leonardo Martinez Gonzales</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>07:00-09:00</p>
+                            <p>Desarrollo Web</p>
+                            <p>Aula: UM01</p>
+                            <p>Profesor: Leonardo Martinez Gonzales</p>
+                        </td>
+                        <td>
+                            <p>07:00-09:00</p>
+                            <p>Desarrollo Web</p>
+                            <p>Aula: UM01</p>
+                            <p>Profesor: Leonardo Martinez Gonzales</p>
+                        </td>
+                        <td>
+                            <p>07:00-09:00</p>
+                            <p>Desarrollo Web</p>
+                            <p>Aula: UM01</p>
+                            <p>Profesor: Leonardo Martinez Gonzales</p>
+                        </td>
+                        <td>
+                            <p>07:00-09:00</p>
+                            <p>Desarrollo Web</p>
+                            <p>Aula: UM01</p>
+                            <p>Profesor: Leonardo Martinez Gonzales</p>
+                        </td>
+                        <td>
+                            <p>07:00-09:00</p>
+                            <p>Desarrollo Web</p>
+                            <p>Aula: UM01</p>
+                            <p>Profesor: Leonardo Martinez Gonzales</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>07:00-09:00</p>
+                            <p>Desarrollo Web</p>
+                            <p>Aula: UM01</p>
+                            <p>Profesor: Leonardo Martinez Gonzales</p>
+                        </td>
+                        <td>
+                            <p>07:00-09:00</p>
+                            <p>Desarrollo Web</p>
+                            <p>Aula: UM01</p>
+                            <p>Profesor: Leonardo Martinez Gonzales</p>
+                        </td>
+                        <td>
+                            <p>07:00-09:00</p>
+                            <p>Desarrollo Web</p>
+                            <p>Aula: UM01</p>
+                            <p>Profesor: Leonardo Martinez Gonzales</p>
+                        </td>
+                        <td>
+                            <p>07:00-09:00</p>
+                            <p>Desarrollo Web</p>
+                            <p>Aula: UM01</p>
+                            <p>Profesor: Leonardo Martinez Gonzales</p>
+                        </td>
+                        <td>
+                            <p>07:00-09:00</p>
+                            <p>Desarrollo Web</p>
+                            <p>Aula: UM01</p>
+                            <p>Profesor: Leonardo Martinez Gonzales</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <section class="zona_tarjetas ">
+            <div class="conten_msj msj_detalle us_add inactivo">
+                <div class="cuerpo_msj">
+                    <img src="../images/plus.png" alt="icono inscripcion">
+                    <p>Alumno Agregado</p>
+                </div>
+                <input type="button" value="Aceptar" class="boton btnACCFF" id="btnAcepAdd">
+                
+            </div>
+            <div class="conten_msj msj_detalle us_delete inactivo">
+                <div class="cuerpo_msj">
+                    <img src="../images/delete.png" alt="icono inscripcion">
+                    <p>Alumno Eliminado</p>
+                </div>
+                <input type="button" value="Aceptar" class="boton btnACCFF" id="btnAceptElim">
+            </div>
+
+            <div class="conten_msj msj_detalle us_Cdelete inactivo">
+                <div class="cuerpo_msj">
+                    <img src="../images/delete-user.png" alt="icono inscripcion">
+                    <p>¿Deseas eliminar un alumno?</p>
+                </div>
+                <div class="botones">
+                <input type="button" value="Aceptar" class="boton btnACCFF" id="deleteAlumno">
+                <input type="button" value="Cancelar" class="boton btnACCFF" id="cancelDeleteAlumno">
+            </div>
+            </div>
+
+            <div class="conten_msj msj_detalle us_Cadd inactivo">
+                <div class="cuerpo_msj">
+                    <img src="../images/new.png" alt="icono inscripcion">
+                    <p>¿Deseas agregar un alumno?</p>
+                </div>
+                <div class="botones">
+                <input type="button" value="Agregar" class="boton btnACCFF" id="addAlumno">
+                <input type="button" value="Cerrar" class="boton btnACCFF" id="canceladdAlumno">
+            </div>
+            </div>
+
+            <div class="oper_assero frmdat inactivo">
+                <form action="">
+                    <input type="search" placeholder="Nombre Alumno">
+                    <input type="button" value="Buscar">
+                </form>
+                <div class="showBusq">
+                    <div class="res_Bus">
+                        <img src="../images/user.png" alt="Icono Usuario">
+                        <p>Diego Manzo Avalos</p>
+                        <p>Sistemas Computacionales</p>
+                        <p>18420461</p>
+                        <a href="#" class="elimEstu"><img src="../images/remove.png" alt="Icono Eliminar"></a>
+                        
+                    </div>
+
+                    <div class="res_Bus">
+                        <img src="../images/user.png" alt="Icono Usuario">
+                        <p>Diego Manzo Avalos</p>
+                        <p>Sistemas Computacionales</p>
+                        <p>18420461</p>
+                        <a href="#" class="elimEstu"><img src="../images/remove.png" alt="Icono Eliminar"></a>
+
+                    </div>
+                </div>
+                <div class="botones">
+                    <input type="button" value="Agregar" id="btAgreMod" >
+                    <input type="button" value="Cancelar" id="btCanMod">
+                </div>
+            </div>
+           
+            <div class="add_student frmdat  inactivo">
+                <form action="">
+                    <input type="search" placeholder="Nombre Alumno">
+                    <input type="button" value="Buscar">
+                </form>
+                <div class="showBusq">
+                    <div class="res_Bus">
+                        <img src="../images/user.png" alt="Icono Usuario">
+                        <p>Diego Manzo Avalos</p>
+                        <p>Sistemas Computacionales</p>
+                        <p>18420461</p>
+                        <a href="#" class="addEstu"><img src="../images/plus.png" alt="Icono Agregar"></a>
+                    </div>
+
+                    <div class="res_Bus">
+                        <img src="../images/user.png" alt="Icono Usuario">
+                        <p>Diego Manzo Avalos</p>
+                        <p>Sistemas Computacionales</p>
+                        <p>18420461</p>
+                        <a href="#" class="addEstu"><img src="../images/plus.png" alt="Icono Eliminar"></a>
+                    </div>
+                </div>
+                <div class="botones">
+                    <input type="button" value="Cerrar" id="btnCloseBusc">
+                </div>
+            </div>
+            <div class="multi_cards">
+                <p class="separador">Mis Asesorias</p>
+                <div class="one_card">
+
+                    <div class="titulo_asesoria">
+                    <img src="../images/webMateria.png" alt="icono asesoria">
+                    <p>Programacion Web</p>
+                    </div>
+
+                    <div class="datos_asesoria">
+                        <p>Profresor: <span>Leonardo Martinez</span></p>
+                        <p>Disponibles <span>completo</span></p>
+                    </div>
+
+                    <div class="hora_asesoria">
+                        <p>Lu: 10:00-11:00</p>
+                        <p>Mi: 10:00-11:00</p>
+                        <p>Ju: 10:00-11:00</p>
+                    </div>
+                 <div class="valor_prog">
+                    <figure>
+                        <img src="../images/YellowStar.png" alt="icono valoracion">
+                        <img src="../images/YellowStar.png" alt="icono valoracion">
+                        <img src="../images/YellowStar.png" alt="icono valoracion">
+                        <img src="../images/WhiteStar.png" alt="icono valoracion">
+                    </figure>
+                    <p class="vr_detalles"><a href="#">detalles</a></p>
+                 </div>
+                    
+                </div>
+                <div class="one_card">
+
+                    <div class="titulo_asesoria">
+                    <img src="../images/webMateria.png" alt="icono asesoria">
+                    <p>Programacion Web</p>
+                    </div>
+
+                    <div class="datos_asesoria">
+                        <p>Profresor: <span>Leonardo Martinez</span></p>
+                        <p>Disponibles <span>completo</span></p>
+                    </div>
+
+                    <div class="hora_asesoria">
+                        <p>Lu: 10:00-11:00</p>
+                        <p>Mi: 10:00-11:00</p>
+                        <p>Ju: 10:00-11:00</p>
+                    </div>
+                 <div class="valor_prog">
+                    <figure>
+                        <img src="../images/YellowStar.png" alt="icono valoracion">
+                        <img src="../images/YellowStar.png" alt="icono valoracion">
+                        <img src="../images/YellowStar.png" alt="icono valoracion">
+                        <img src="../images/WhiteStar.png" alt="icono valoracion">
+                    </figure>
+                    <p class="vr_detalles"><a href="#">detalles</a></p>
+                 </div>
+                    
+                </div>
+                <div class="one_card">
+
+                    <div class="titulo_asesoria">
+                    <img src="../images/webMateria.png" alt="icono asesoria">
+                    <p>Programacion Web</p>
+                    </div>
+
+                    <div class="datos_asesoria">
+                        <p>Profresor: <span>Leonardo Martinez</span></p>
+                        <p>Disponibles <span>completo</span></p>
+                    </div>
+
+                    <div class="hora_asesoria">
+                        <p>Lu: 10:00-11:00</p>
+                        <p>Mi: 10:00-11:00</p>
+                        <p>Ju: 10:00-11:00</p>
+                    </div>
+                 <div class="valor_prog">
+                    <figure>
+                        <img src="../images/YellowStar.png" alt="icono valoracion">
+                        <img src="../images/YellowStar.png" alt="icono valoracion">
+                        <img src="../images/YellowStar.png" alt="icono valoracion">
+                        <img src="../images/WhiteStar.png" alt="icono valoracion">
+                    </figure>
+                    <p class="vr_detalles"><a href="#">detalles</a></p>
+                 </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    {% endblock %}
+
+{% block scripts %}
+<script src="../javaScript/js_inicio.js"></script>
+<script src="../javaScript/js_toggle.js"></script>
+<script src="../javaScript/wind_docente.js"></script>
+{% endblock %}

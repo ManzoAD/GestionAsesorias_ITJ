@@ -3,6 +3,36 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* Creamos nuestros estilos para el warning */
+.alert-warning{
+    background-color: #fff3cd;
+    border-radius: 6px;
+    font-size: 1.8rem;
+    width: 99.5%;
+    margin: 0 auto;
+    height: 40px;
+    
+}
+.alert-warning p{
+    font-size: 1.9rem;
+    text-align: center;
+    padding: 10px;
+    
+    
+}
+.alert-warning p button{
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: 1px solid black;
+    font-size: 1.1rem;
+    text-align: center;
+    float: right;
+    cursor: pointer;
+   
+}
  .content_aside{
     position: sticky;
     top: 0;

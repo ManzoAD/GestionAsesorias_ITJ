@@ -1,0 +1,355 @@
+{% extends './head_foot.html' %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{{url_for('static',filename='styles/style_admin.css')}}">
+{% endblock %}
+
+
+{% block titulo %}
+<title>Asesorias(Admin)</title>
+{% endblock %}
+
+{% block main %}
+<main class="myMain">
+        <div class="conten_GUsuarios">
+        <div class="usuario">
+            <img src="../images/hombre.png" alt="imagen usuario">
+            <div><p><span>Mi perfil</span> (Administrador)</p>
+                <p>Alfonso Perez Z.</p></div>
+        </div>
+        <div class="botones">
+            <a href="asesorias.html">Vista Alumno</a>
+            <a href="admin.html">Vista Admin</a>
+        </div>
+    </div>
+        
+        <section class="datos">
+            <div class="Asesorias_Activas">
+                <p>Asesorias Activas</p>
+                <div>
+                    <figure>
+                        <img src="../images/webMateria.png" alt="icono estructura de datos">
+                    </figure>
+                    <p>Estructura de Datos</p>
+                    <button>Detalles</button>
+                </div>
+                <div>
+                    <figure>
+                        <img src="../images/webMateria.png" alt="Icono lenguajes y automatas">
+                    </figure>
+                    <p>Lenguajes y Automatas</p>
+                    <button>Detalles</button>
+                </div>
+                <div>
+                    <figure>
+                        <img src="../images/webMateria.png" alt="icono PrograWeb">
+                    </figure>
+                    <p>Programacion Web</p>
+                    <button>Detalles</button>
+                </div>
+            </div>
+            <div class="btnsAdmin">
+                <button id="btnNV"><img src="../images/plus.png" alt="nueva asesoria" >Asesoria</button>
+                <button id="btnAV"><img src="../images/darse-cuenta.png" alt="avisos" >Avisos</button>
+            </div>
+            <section class="modificaciones inactivo">
+                <p>Estructura Asesoria</p>
+                <form action="">
+                    <label for="txtNom">
+                        Nombre
+                        <input type="text" placeholder="Nombre Asesoria" id="txtNom">
+                    </label>
+                    <label for="txtCapacid">
+                        Capacidad
+                        <input type="number" placeholder="Numero Alumnos" id="txtCapacid">
+                    </label>
+                    <div>
+                        <p>Periodo</p>
+                        <label for="fchInicio">
+                            Inicio
+                            <input type="date"  id="fchInicio">
+                        </label>
+                        <label for="fchFin" >
+                            Fin
+                            <input type="date" id="fchFin">
+                        </label>
+                    </div>
+                    <p>Horario</p>
+                    <div class="Horario">
+                        
+                        <label for="">
+                            Lunes
+                            <label for="">
+                                Hora Inicio
+                                <select name="" id="">
+                                    <option value="">---00:00----</option>
+                                    <option value="">07:00</option>
+                                    <option value="">08:00</option>
+                                    <option value="">09:00</option>
+                                    <option value="">10:00</option>
+                                    <option value="">11:00</option>
+                                    <option value="">12:00</option>
+                                    <option value="">01:00</option>
+                                    <option value="">02:00</option>
+                                    <option value="">03:00</option>
+                                </select>
+                                Hora Fin
+                                <select name="" id="">
+                                    <option value="">---00:00----</option>
+                                    <option value="">07:00</option>
+                                    <option value="">08:00</option>
+                                    <option value="">09:00</option>
+                                    <option value="">10:00</option>
+                                    <option value="">11:00</option>
+                                    <option value="">12:00</option>
+                                    <option value="">01:00</option>
+                                    <option value="">02:00</option>
+                                    <option value="">03:00</option>
+                                </select>
+                            </label>
+                            
+                        </label>
+                        <label for="">
+                            Martes
+                            <label for="">
+                                Hora Inicio
+                                <select name="" id="">
+                                    <option value="">---00:00----</option>
+                                    <option value="">07:00</option>
+                                    <option value="">08:00</option>
+                                    <option value="">09:00</option>
+                                    <option value="">10:00</option>
+                                    <option value="">11:00</option>
+                                    <option value="">12:00</option>
+                                    <option value="">01:00</option>
+                                    <option value="">02:00</option>
+                                    <option value="">03:00</option>
+                                </select>
+                                Hora Fin
+                                <select name="" id="">
+                                    <option value="">---00:00----</option>
+                                    <option value="">07:00</option>
+                                    <option value="">08:00</option>
+                                    <option value="">09:00</option>
+                                    <option value="">10:00</option>
+                                    <option value="">11:00</option>
+                                    <option value="">12:00</option>
+                                    <option value="">01:00</option>
+                                    <option value="">02:00</option>
+                                    <option value="">03:00</option>
+                                </select>
+                            </label>
+                        </label>
+                        <label for="">
+                            Miercoles
+                            <label for="">
+                                Hora Inicio
+                                <select name="" id="">
+                                    <option value="">---00:00----</option>
+                                    <option value="">07:00</option>
+                                    <option value="">08:00</option>
+                                    <option value="">09:00</option>
+                                    <option value="">10:00</option>
+                                    <option value="">11:00</option>
+                                    <option value="">12:00</option>
+                                    <option value="">01:00</option>
+                                    <option value="">02:00</option>
+                                    <option value="">03:00</option>
+                                </select>
+                                Hora Fin
+                                <select name="" id="">
+                                    <option value="">---00:00----</option>
+                                    <option value="">07:00</option>
+                                    <option value="">08:00</option>
+                                    <option value="">09:00</option>
+                                    <option value="">10:00</option>
+                                    <option value="">11:00</option>
+                                    <option value="">12:00</option>
+                                    <option value="">01:00</option>
+                                    <option value="">02:00</option>
+                                    <option value="">03:00</option>
+                                </select>
+                            </label>
+                        </label>
+                        <label for="">
+                            Jueves
+                            <label for="">
+                                Hora Inicio
+                                <select name="" id="">
+                                    <option value="">---00:00----</option>
+                                    <option value="">07:00</option>
+                                    <option value="">08:00</option>
+                                    <option value="">09:00</option>
+                                    <option value="">10:00</option>
+                                    <option value="">11:00</option>
+                                    <option value="">12:00</option>
+                                    <option value="">01:00</option>
+                                    <option value="">02:00</option>
+                                    <option value="">03:00</option>
+                                </select>
+                                Hora Fin
+                                <select name="" id="">
+                                    <option value="">---00:00----</option>
+                                    <option value="">07:00</option>
+                                    <option value="">08:00</option>
+                                    <option value="">09:00</option>
+                                    <option value="">10:00</option>
+                                    <option value="">11:00</option>
+                                    <option value="">12:00</option>
+                                    <option value="">01:00</option>
+                                    <option value="">02:00</option>
+                                    <option value="">03:00</option>
+                                </select>
+                            </label>
+                        </label>
+                        <label for="">
+                            Viernes
+                            <label for="">
+                                Hora Inicio
+                                <select name="" id="">
+                                    <option value="">---00:00----</option>
+                                    <option value="">07:00</option>
+                                    <option value="">08:00</option>
+                                    <option value="">09:00</option>
+                                    <option value="">10:00</option>
+                                    <option value="">11:00</option>
+                                    <option value="">12:00</option>
+                                    <option value="">01:00</option>
+                                    <option value="">02:00</option>
+                                    <option value="">03:00</option>
+                                </select>
+                                Hora Fin
+                                <select name="" id="">
+                                    <option value="">---00:00----</option>
+                                    <option value="">07:00</option>
+                                    <option value="">08:00</option>
+                                    <option value="">09:00</option>
+                                    <option value="">10:00</option>
+                                    <option value="">11:00</option>
+                                    <option value="">12:00</option>
+                                    <option value="">01:00</option>
+                                    <option value="">02:00</option>
+                                    <option value="">03:00</option>
+                                </select>
+                            </label>
+                        </label>
+                    </div>
+                    <div class="botones">
+                        <input type="button" id="modiAceptada" value="Guardar">
+                        <input type="button" id="modiCancelada" value="Cancelar">
+                    </div>
+                </form>
+            </section>
+            <section class="conf_AddAsero inactivo">
+                <div class="contenido_msj">
+                <img src="../images/email.png" alt="">
+                <p>¿Deseas agregar la asesoria?</p>
+            </div>
+                <div class="botones">
+                    <input type="button"  id="" value="Aceptar">
+                    <input type="button" id="" value="Cancelar">
+                </div>
+            </section>
+            <section class="conf_AddAsero msjAseso inactivo">
+                <div>
+                <img src="../images/expediente.png" alt="">
+                <p>Asesoria Guardada</p>
+            </div>
+                <div class="botones">
+                <input type="button" id="AceptF" value="Aceptar">
+                </div>
+            </section>
+
+            <section class="conf_AddAsero inactivo avisoEnv">
+                <div>
+                <img src="../images/darse-cuenta.png" alt="">
+                <p>Aviso Enviado</p>
+            </div>
+                <div class="botones">
+                <input type="button" id="avienv" value="Aceptar">
+                </div>
+            </section>
+
+            <section class="avisos conf_AddAsero inactivo">
+                <p>Describe el aviso</p>
+                <form action="">
+                    <label for="av_Asunto">
+                        Asunto
+                        <input type="text" id="av_Asunto">
+                    </label>
+                    <label for="av_Descripcion">
+                        Descripcion
+                        <input type="text" id="av_Descripcion">
+                    </label>
+                    <div class="botones">
+                        <input type="button"  id="acepAviso"value="Aceptar">
+                        <input type="button" id="canAviso" value="Cancelar">
+                    </div>
+                </form>
+            </section>
+            <div class="Mas_Sugeridos">
+                <p>Mas Votado</p>
+                <article>
+                    <p>Carlos Bautista</p>
+                    <div class="cuerpo">
+                        <div class="msj">
+                            <img src="../images/avatar.png" alt="icono usuario">
+                            <p>Hola, es posible que se abra una asesoria en lenguajes y automatas 2</p>
+                        </div>
+                        <div>
+                            <label for="chLike">
+                                <img src="../images/like.png" alt="iconoLike">
+                                <input type="checkbox" id="chLike" hidden >
+                            </label>
+                            
+                            <p>32</p>
+                        </div>
+                    </div>
+                    
+                   
+                </article>
+                <article>
+                    <p>Jesus Morgado</p>
+                    <div class="cuerpo">
+                        <div class="msj">
+                            <img src="../images/avatar.png" alt="icono usuario">
+                            <p>Hola, a nuestro grupo nos interesa una asesoria en calculo vectorial</p>
+                        </div>
+                        <div>
+                            <label for="chLike">
+                                <img src="../images/like.png" alt="iconoLike">
+                                <input type="checkbox" id="chLike" hidden >
+                            </label>
+                            
+                            <p>32</p>
+                        </div>
+                    </div>
+                    
+                   
+                </article>
+                <article>
+                    <p>Carlos Mendoza</p>
+                    <div class="cuerpo">
+                        <div class="msj">
+                            <img src="../images/avatar.png" alt="icono usuario">
+                            <p>Hola ¿Hay posibilidad de una asesoria para lenguajes y automatas</p>
+                        </div>
+                        <div>
+                            <label for="chLike">
+                                <img src="../images/like.png" alt="iconoLike">
+                                <input type="checkbox" id="chLike" hidden >
+                            </label>
+                            <p>32</p>
+                        </div>
+                    </div>
+                </article>
+    
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block scripts %}
+<script src="../javaScript/js_inicio.js"></script>
+<script src="../javaScript/js_wind_admin.js"></script>
+{% endblock %}

@@ -1,6 +1,5 @@
 from flask import Blueprint,render_template
 
-
 #Definir el blueprint para clientes
 estadistica = Blueprint('estadistica',__name__)
 
