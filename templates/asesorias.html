@@ -2,6 +2,7 @@
 
 
 {% block estilos %}
+<link rel="stylesheet" href="{{url_for('static',filename='styles/head_foot.css')}}">
 <link rel="stylesheet" href="{{url_for('static',filename='styles/style_asesoria.css')}}">
 {% endblock %}
 
@@ -15,9 +16,9 @@
     <main class="myMain">
         <div class="conten_GUsuarios">
         <div class="usuario">
-            <img src="../images/hombre.png" alt="imagen usuario">
+            <img src="{{url_for('static',filename='images/hombre.png')}}" alt="imagen usuario">
             <div><p><span>Mi perfil</span> (Estudiante)</p>
-                <p>Diego Manzo Avalos</p>
+                <p>{{datUs['nombre_usuario']}}</p>
             </div>
             
         </div>
@@ -42,102 +43,21 @@
                     <th>Viernes</th>
                 </thead>
                 <tbody>
+                    {% for h in datAs %}
                     <tr>
+                        {% for k in h['horario']%}
                         <td>
-                            <p>07:00-09:00</p>
-                            <p>Desarrollo Web</p>
-                            <p>Aula: UM01</p>
-                            <p>Profesor: Leonardo Martinez Gonzales</p>
+                            <p>{{h['nombre_asesoria']}}</p>
+                            <p>{{k['HoraInicio']}}-{{k['HoraFin']}}</p>
+                            <p>Aula:{{k['Aula']}}</p>
+                            <p>Profesor: {{h['docente']['nombre']}}</p>
                         </td>
-                        <td>
-                            <p>07:00-09:00</p>
-                            <p>Desarrollo Web</p>
-                            <p>Aula: UM01</p>
-                            <p>Profesor: Leonardo Martinez Gonzales</p>
-                        </td>
-                        <td>
-                            <p>07:00-09:00</p>
-                            <p>Desarrollo Web</p>
-                            <p>Aula: UM01</p>
-                            <p>Profesor: Leonardo Martinez Gonzales</p>
-                        </td>
-                        <td>
-                            <p>07:00-09:00</p>
-                            <p>Desarrollo Web</p>
-                            <p>Aula: UM01</p>
-                            <p>Profesor: Leonardo Martinez Gonzales</p>
-                        </td>
-                        <td>
-                            <p>07:00-09:00</p>
-                            <p>Desarrollo Web</p>
-                            <p>Aula: UM01</p>
-                            <p>Profesor: Leonardo Martinez Gonzales</p>
-                        </td>
+                        {% endfor %}
+                        {% for i in range(h['horario']|length ,5)%}
+                        <td></td>
+                        {% endfor %}
                     </tr>
-                    <tr>
-                        <td>
-                            <p>07:00-09:00</p>
-                            <p>Desarrollo Web</p>
-                            <p>Aula: UM01</p>
-                            <p>Profesor: Leonardo Martinez Gonzales</p>
-                        </td>
-                        <td>
-                            <p>07:00-09:00</p>
-                            <p>Desarrollo Web</p>
-                            <p>Aula: UM01</p>
-                            <p>Profesor: Leonardo Martinez Gonzales</p>
-                        </td>
-                        <td>
-                            <p>07:00-09:00</p>
-                            <p>Desarrollo Web</p>
-                            <p>Aula: UM01</p>
-                            <p>Profesor: Leonardo Martinez Gonzales</p>
-                        </td>
-                        <td>
-                            <p>07:00-09:00</p>
-                            <p>Desarrollo Web</p>
-                            <p>Aula: UM01</p>
-                            <p>Profesor: Leonardo Martinez Gonzales</p>
-                        </td>
-                        <td>
-                            <p>07:00-09:00</p>
-                            <p>Desarrollo Web</p>
-                            <p>Aula: UM01</p>
-                            <p>Profesor: Leonardo Martinez Gonzales</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>07:00-09:00</p>
-                            <p>Desarrollo Web</p>
-                            <p>Aula: UM01</p>
-                            <p>Profesor: Leonardo Martinez Gonzales</p>
-                        </td>
-                        <td>
-                            <p>07:00-09:00</p>
-                            <p>Desarrollo Web</p>
-                            <p>Aula: UM01</p>
-                            <p>Profesor: Leonardo Martinez Gonzales</p>
-                        </td>
-                        <td>
-                            <p>07:00-09:00</p>
-                            <p>Desarrollo Web</p>
-                            <p>Aula: UM01</p>
-                            <p>Profesor: Leonardo Martinez Gonzales</p>
-                        </td>
-                        <td>
-                            <p>07:00-09:00</p>
-                            <p>Desarrollo Web</p>
-                            <p>Aula: UM01</p>
-                            <p>Profesor: Leonardo Martinez Gonzales</p>
-                        </td>
-                        <td>
-                            <p>07:00-09:00</p>
-                            <p>Desarrollo Web</p>
-                            <p>Aula: UM01</p>
-                            <p>Profesor: Leonardo Martinez Gonzales</p>
-                        </td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
@@ -145,7 +65,7 @@
             <div class="one_card inactivo" id="inscribirme" >
 
                 <div class="titulo_asesoria">
-                <img src="../images/webMateria.png" alt="icono asesoria">
+                <img src="{{url_for('static',filename='images/webMateria.png')}}" alt="icono asesoria">
                 <p>Programacion Web</p>
                 </div>
 
@@ -161,10 +81,10 @@
                 </div>
              <div class="valor_prog" >
                 <figure>
-                    <img src="../images/YellowStar.png" alt="icono valoracion">
-                    <img src="../images/YellowStar.png" alt="icono valoracion">
-                    <img src="../images/YellowStar.png" alt="icono valoracion">
-                    <img src="../images/WhiteStar.png" alt="icono valoracion">
+                    <img src="{{url_for('static',filename='images/YellowStar.png')}}" alt="icono valoracion">
+                    <img src="{{url_for('static',filename='images/YellowStar.png')}}" alt="icono valoracion">
+                    <img src="{{url_for('static',filename='images/YellowStar.png')}}" alt="icono valoracion">
+                    <img src="{{url_for('static',filename='images/WhiteStar.png')}}" alt="icono valoracion">
                 </figure>
                 <div>
                     <input type="button" value="Inscribirme" class="boton bts btnInscrib">
@@ -175,7 +95,7 @@
             </div>
             <div class="conten_msj msj_confirm_inscript inactivo">
                 <div class="cuerpo_msj">
-                    <img src="../images/inscripcion.png" alt="icono inscripcion">
+                    <img src="{{url_for('static',filename='images/inscripcion.png')}}" alt="icono inscripcion">
                     <p>¿Deseas Inscribirte? Asesoria Simulacion</p>
                 </div>
                 <div class="cont_btn botones">
@@ -187,7 +107,7 @@
             </div>
             <div class="conten_msj msj_inscript msjInsF inactivo">
                 <div class="cuerpo_msj">
-                    <img src="../images/inscripcion.png" alt="icono inscripcion">
+                    <img src="{{url_for('static',filename='images/inscripcion.png')}}" alt="icono inscripcion">
                     <p>Inscripcion Exitosa!!</p>
                 </div>
                 <input type="button" value="Aceptar" class="boton btnACCFF">
@@ -200,14 +120,14 @@
                 </form>
                 <div class="showBusq">
                     <div class="res_Bus">
-                        <img src="../images/user.png" alt="Icono Usuario">
+                        <img src="{{url_for('static',filename='images/user.png')}}" alt="Icono Usuario">
                         <p>Diego Manzo Avalos</p>
                         <p>Sistemas Computacionales</p>
                         <p>18420461</p>
                     </div>
 
                     <div class="res_Bus">
-                        <img src="../images/user.png" alt="Icono Usuario">
+                        <img src="{{url_for('static',filename='images/user.png')}}" alt="Icono Usuario">
                         <p>Diego Manzo Avalos</p>
                         <p>Sistemas Computacionales</p>
                         <p>18420461</p>
@@ -224,11 +144,11 @@
                 </form>
                 <div class="showBusq">
                     <div class="res_Bus">
-                        <img src="../images/user.png" alt="Icono Usuario">
+                        <img src="{{url_for('static',filename='images/user.png')}}" alt="Icono Usuario">
                         <p>Diego Manzo Avalos</p>
                         <p>Sistemas Computacionales</p>
                         <p>18420461</p>
-                        <a href="#" class="addEstu"><img src="../images/plus.png" alt="Icono Eliminar"></a>
+                        <a href="#" class="addEstu"><img src="{{url_for('static',filename='images/plus.png')}}" alt="Icono Eliminar"></a>
                     </div>
                 </div>
                 <div class="botones">
@@ -237,75 +157,53 @@
             </div>
             <div class="multi_cards">
                 <p class="separador">Mis Asesorias</p>
+               {% if "Error" in datAs[0] %}
+               <p class="msj_Asesoria">Sin asesorias en curso!!!</p>
+                {% else %}
+                {% for i in datAs %}
                 <div class="one_card">
 
                     <div class="titulo_asesoria">
-                    <img src="../images/webMateria.png" alt="icono asesoria">
-                    <p>Programacion Web</p>
+                    <img src="{{url_for('static',filename='images/webMateria.png')}}" alt="icono asesoria">
+                    <p>{{i['nombre_asesoria']}}</p>
                     </div>
 
                     <div class="datos_asesoria">
-                        <p>Profresor: <span>Leonardo Martinez</span></p>
+                        <p>Profresor: <span>{{i['docente']['nombre']}}</span></p>
+                        {% if i['Espacios_disponibles'] == 0 %}
                         <p>Disponibles <span>completo</span></p>
+                        {% endif %}
+                        {% if i['Espacios_disponibles'] > 0%}
+                        <p>Disponibles <span>{{i['Espacios_disponibles']}}</span></p>
+                        {% endif %}
                     </div>
 
                     <div class="hora_asesoria">
-                        <p>Lu: 10:00-11:00</p>
-                        <p>Mi: 10:00-11:00</p>
-                        <p>Ju: 10:00-11:00</p>
+                        {% for a in i['horario']%}
+                        <p>{{a['Dia'][:2]}}:{{a['HoraInicio']}}-{{a['HoraFin']}}</p>
+                        {% endfor %}
+                        
                     </div>
                  <div class="valor_prog">
                     <figure>
-                        <img src="../images/YellowStar.png" alt="icono valoracion">
-                        <img src="../images/YellowStar.png" alt="icono valoracion">
-                        <img src="../images/YellowStar.png" alt="icono valoracion">
-                        <img src="../images/WhiteStar.png" alt="icono valoracion">
+                        <img src="{{url_for('static',filename='images/YellowStar.png')}}" alt="icono valoracion">
+                        <img src="{{url_for('static',filename='images/YellowStar.png')}}" alt="icono valoracion">
+                        <img src="{{url_for('static',filename='images/YellowStar.png')}}" alt="icono valoracion">
+                        <img src="{{url_for('static',filename='images/WhiteStar.png')}}" alt="icono valoracion">
                     </figure>
                     <p class="vr_detalles"><a href="#">detalles</a></p>
                  </div>
-                    
                 </div>
-            </div>
-            
-            <div class="multi_cards">
-                
-                <p class="separador">Novedades</p>
-                <div class="one_card">
-
-                    <div class="titulo_asesoria">
-                    <img src="../images/webMateria.png" alt="icono asesoria">
-                    <p>Programacion Web</p>
-                    </div>
-
-                    <div class="datos_asesoria">
-                        <p>Profresor: <span>Leonardo Martinez</span></p>
-                        <p>Disponibles <span>completo</span></p>
-                    </div>
-
-                    <div class="hora_asesoria">
-                        <p>Lu: 10:00-11:00</p>
-                        <p>Mi: 10:00-11:00</p>
-                        <p>Ju: 10:00-11:00</p>
-                    </div>
-                 <div class="valor_prog">
-                    <figure>
-                        <img src="../images/YellowStar.png" alt="icono valoracion">
-                        <img src="../images/YellowStar.png" alt="icono valoracion">
-                        <img src="../images/YellowStar.png" alt="icono valoracion">
-                        <img src="../images/WhiteStar.png" alt="icono valoracion">
-                    </figure>
-                    <p class="vr_program"><a href="#">ver programa</a></p>
-                 </div>
-                    
-                </div>
+                {% endfor %}
+                {% endif %}
             </div>
         </section>
     </main>
 {% endblock %}
 {% block scripts %}
-<script src="../javaScript/js_inicio.js"></script>
-<script src="../javaScript/js_toggle.js"></script>
-<script src="../javaScript/wind_asesorias.js"></script>
+<script src="{{url_for('static',filename='javaScript/js_inicio.js')}}"></script>
+<script src="{{url_for('static',filename='javaScript/js_toggle.js')}}"></script>
+<script src="{{url_for('static',filename='javaScript/wind_asesorias.js')}}"></script>
 {% endblock %}
 
 

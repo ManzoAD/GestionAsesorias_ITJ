@@ -1,0 +1,53 @@
+
+{% extends './plantilla.html' %}
+
+    {% block stylesPresentacion %}
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/head_foot_pres.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/head_foot_reg.css')}}">
+    {% endblock %}
+
+    {% block main%}
+    <main>
+        <div class="titulo">
+            <h1>Enfocados en tu educación</h1>
+            <img src="{{url_for('static',filename='images/titleseparador.svg')}}" alt="" class="separator1">
+            <img src="{{url_for('static',filename='images/titleseparadormobile.svg')}}" alt="" class="separator2">
+        </div>
+
+        <div class="main-contenedor">
+            <div class="first-second-contenedor">
+                    <div class="subtitle">
+                        <h2>Te ofrecemos.....</h2>
+                    </div>
+                    <div class="subcontenedor">
+                        <ol>
+                            <li>Gestion asesorias</li>
+                            <li>Recordatorios</li>
+                            <li>Agregar sugerencias</li>
+                            <li>Contenido novedoso</li>
+                        </ol>
+                    </div>
+            </div>
+
+            <div class="second-second-contenedor">
+                <div class="people-contenedor">
+                    
+                    <img src="{{url_for('static',filename='images/people.svg')}}" alt="">
+                </div>
+                <div class="botones">
+                    <a href="trab_morgado/login.html" class="btnIniciar">Inicia Sesion</a>
+                    <a href="registro.html" class="btnRegistrate">Registrate</a>
+                </div>
+                
+            </div>
+            
+        </div>
+    </main>
+    {% endblock %}
+
+
+
+
+<!-- <script src="/javaScript/js_inicio.js"></script> -->
+

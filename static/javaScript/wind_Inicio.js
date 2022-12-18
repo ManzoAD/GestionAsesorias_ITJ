@@ -17,9 +17,8 @@ const formulario = document.querySelector('#comentario')
 const btnSend = document.querySelector(".btn_sendS");
 const msSug = document.querySelector(".msj_emergente");
 btnSend.addEventListener("click",function(e){
-//e.preventDefault();
+e.preventDefault();
 msSug.classList.toggle('inactive');
-//formulario.submit()
 });
 
 const sugeAceptada = document.querySelector('#aceptaSugerencia');

@@ -11,6 +11,15 @@
     --btnAceptar:#1AA438;
     --btnCancelar:#DD1313;
     --avisos:#FBF0F0;
+    --cobaltBlue:#0047ab;
+    --MayaBlue: #73c2fb;
+    --BBlue: #89cff0d6;
+}
+.msj_Asesoria{
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--cardborder);
+    font-weight: 400;
 }
 
 
@@ -354,13 +363,14 @@ main{
         height: 25px;
         text-align: center;
         color: var(--cardborder);
-    
         font-size: 1.7rem;
         font-weight: bold;
         box-shadow: var(--sombra);
         border: 2px solid white;
         justify-self: center;
         border-radius: 6px;
+        font-style: italic;
+        color: var(--cardborder);
     
 }
 
@@ -511,12 +521,15 @@ height: 25px;
 }
 
 @media (min-width:768px){
-
+    .msj_Asesoria{
+        font-size: 2rem;
+    }
     .zona_tarjetas .separador{
         
         width: 50%;
         height: 26px;
         font-size: 1.8rem ;
+        font-style: italic;
      }
 
 .conten_msj {
@@ -574,6 +587,7 @@ height: 45px;
         display: flex;
         align-items: center;
         margin-left: 3px;
+        
     }
     .zona_tarjetas .one_card .titulo_asesoria p{
         font-size: 1.4rem;
@@ -582,9 +596,11 @@ height: 45px;
         border-bottom: 1px solid var(--morado2);
         border-right: 1px solid var(--morado2);
         border-radius: 4px;
-        width: 160px;
+        width: 180px;
         height: 20px;
         text-align: center;
+        color: var(--cobaltBlue);
+        font-style: italic;
     }
     .zona_tarjetas .one_card .datos_asesoria, .hora_asesoria{
         font-size: 1.5rem;
@@ -637,6 +653,9 @@ height: 45px;
 }
 
 @media (min-width:1024px){
+    .msj_Asesoria{
+        font-size: 2.2rem;
+    }
     .conten_msj {
         width: 320px;
     }
@@ -650,7 +669,6 @@ height: 45px;
         width: 50%;
         height:25px;
         text-align: center;
-        color: black;
         font-size: 1.8rem;
         box-shadow: var(--sombra);
         border: 2px solid white;
@@ -698,7 +716,6 @@ height: 45px;
         border-bottom: 1px solid var(--morado2);
         border-right: 1px solid var(--morado2);
         border-radius: 4px;
-        width: 160px;
         height: 25px;
         text-align: center;
     }

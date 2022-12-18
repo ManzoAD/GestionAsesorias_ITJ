@@ -12,22 +12,17 @@
 
 {% block main %}
     <main class="myMain">
-        
-            
-        
         <div class="content_all">
         <div class="content_loginImg">
             {% block mensaje %}
                         {% for message in get_flashed_messages() %}
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert" >
                             <p>{{message}}
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button>
                             </p>
-                           
                           </div>
                         {% endfor %}
                     {# % block page_content %}{% endblock % #}
-                   
             {% endblock %}
         </div>
         <div class="content_login">
@@ -35,7 +30,7 @@
             <figure>
                 <img src="{{url_for('static',filename='images/logoITJ.webp')}}" alt="Imagen tecnologico">
             </figure>
-            <form action="http://127.0.0.1:5000/login" id="logInAs" method="post">
+            <form action="/login" id="logInAs" method="post">
               
                 <div class="radio_btns">
                     <fieldset id="RadioSesion" name="RadField" >

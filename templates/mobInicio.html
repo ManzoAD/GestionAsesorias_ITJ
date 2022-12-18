@@ -17,10 +17,22 @@
                 </figure>
             </div>
              </div>
+             {% block mensaje %}
+                {% for message in get_flashed_messages() %}
+                <section class="alert alert-warning alert-dismissible fade show" role="alert" >
+                    <p>{{message}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button>
+                    </p>
+                  </section>
+                {% endfor %}
+                {# % block page_content %}{% endblock % #}
+                {% endblock %} 
             <form action="" class="">
                 <input type="search" placeholder="Nombre Asesoria">
-                <button><img src="{{url_for('static',filename='images/buscar.png')}}" alt="botonBusqueda"></button> 
+                <button><img src="{{url_for('static',filename='images/buscar.png')}}" alt="botonBusqueda"></button>
+                
             </form>
+            
         
         </section>
         

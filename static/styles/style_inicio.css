@@ -45,7 +45,36 @@ aside{
     --MayaBlue: #73c2fb;
     --BBlue: #89cff0d6;
 }
-
+/* Creamos nuestros estilos para el warning */
+.alert-warning{
+    background-color: #fff3cd;
+    border-radius: 6px;
+    font-size: 1.8rem;
+    width: 99.5%;
+    margin: 0 auto;
+    height: 40px;
+}
+.alert-warning p{
+    font-size: 1.9rem;
+    text-align: center;
+    padding: 10px;
+    
+    
+}
+.alert-warning p button{
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: 1px solid black;
+    font-size: 1.1rem;
+    text-align: center;
+    float: right;
+    cursor: pointer;
+    color: black;
+   
+}
 header{
 width: 100%;
 background-color: var(--barraAside);
@@ -384,6 +413,7 @@ main{
 .contG_Sugerencias{
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
    
     align-items: center;
     gap: 15px;
@@ -825,7 +855,8 @@ width: 90%;
     overflow-x: scroll;
     overscroll-behavior-x: contain;
     scroll-snap-type:  x proximity;
-    height: 200px;
+    height: auto;
+    
     
 }
 .zona_tarjetas{
@@ -1149,7 +1180,7 @@ color: var(--blueComments);
      }
      .multi_cards{
         width: 100%;
-        height: 250px;
+        
      }
 .multi_cards{
     overflow-x: auto;
@@ -1278,8 +1309,8 @@ footer {
     display: none;
 }
 .zona_tarjetas .multi_cards{
-    height: 350px;
     justify-items: center;
+    
 }
 .zona_tarjetas .separador{
 
@@ -1390,6 +1421,7 @@ footer {
     }
     .contG_Sugerencias{
         width: 100%;
+        
     }
     .zona_tarjetas #inscribirme{
         /* left: 400px;
