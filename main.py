@@ -19,6 +19,7 @@ def load_user(mail_login):
         
 #def create_app():
 app = Flask(__name__)
+app.config['CORS_HEADERS'] = 'Content-Type'
 # Configurar las referencias cruzadas, cuando se hacen peticiones de otros dominios
 #CORS(app)
 cors= CORS(app,resources={r"/predict_petal_lenght":{"origins":"*"}})
