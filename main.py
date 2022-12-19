@@ -4,6 +4,7 @@ from flask_cors import CORS
 from flask import Flask
 from flask_login import LoginManager
 from db.models import UserModel
+from waitress import serve
 
 #from src import create_app
 loginMan = LoginManager()
@@ -47,4 +48,4 @@ app.register_blueprint(misAseso)
 
 if __name__ == '__main__':
     #app = create_app()
-    app.run(host="0.0.0.0")
+    serve(app,host='0.0.0.0')
